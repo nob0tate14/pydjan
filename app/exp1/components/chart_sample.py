@@ -7,10 +7,10 @@ import json
 import requests
 
 
-def get_data():
+def get_data(span):
 
     req_url = "http://climatedataapi.worldbank.org/climateweb/rest/v1/" \
-        "country/mavg/tas/1980/1999/jpn"
+        f"country/mavg/tas/{span}/jpn"
 
     r = requests.get(req_url)
     print(r.text)
@@ -50,10 +50,10 @@ def get_data():
     return json.dumps(dl)
 
 
-def get_data2():
+def get_data2(span):
 
     req_url = "http://climatedataapi.worldbank.org/climateweb/rest/v1/" \
-        "country/annualavg/tas/1980/1999/jpn"
+        f"country/annualavg/tas/{span}/jpn"
 
     r = requests.get(req_url)
     print(r.text)
