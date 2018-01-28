@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
+from exp1 import views
+
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('exp1/', include('exp1.urls')),
     path('admin/', admin.site.urls),
 ]
